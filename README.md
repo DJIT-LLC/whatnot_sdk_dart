@@ -25,30 +25,30 @@ Monorepo containing official Dart SDKs for the **Whatnot Platform**, managed wit
 
 ```bash
 # Run tests across all workspace packages
-puro dart run melos run test
+dart run melos run test
 
 # Run static analysis with fatal infos
-puro dart run melos run analyze
+dart run melos run analyze
 
 # Check formatting
-puro dart run melos run format
-puro dart run melos run format:fix
+dart run melos run format
+dart run melos run format:fix
 
 # Check if upstream OpenAPI spec or Taxonomy have changed (without updating)
-puro dart run melos run check:upstreams
+dart run melos run check:upstreams
 
 # Download latest specs and regenerate SDK code
-puro dart run melos run update:spec
-puro dart run melos run update:taxonomy
-puro dart run melos run update:all
+dart run melos run update:spec
+dart run melos run update:taxonomy
+dart run melos run update:all
 ```
 
 ---
 
 ## Continuous Integration (GitHub Actions)
 
-* **[`.github/workflows/ci.yml`](.github/workflows/ci.yml)**: Triggers on pushes and pull requests to `main`. Installs Puro, validates code formatting, runs static analysis (`--fatal-infos`), and executes the complete unit test suite across both packages.
-* **[`.github/workflows/check_upstreams.yml`](.github/workflows/check_upstreams.yml)**: Runs on a scheduled weekly cron (every Monday at 08:00 UTC) and on manual dispatch. Uses `puro dart run melos run check:upstreams` to verify if Whatnot has published an updated OpenAPI spec or category taxonomy, failing the step with an automated alert if upstream changes are detected.
+* **[`.github/workflows/ci.yml`](.github/workflows/ci.yml)**: Triggers on pushes and pull requests to `main`. Validates code formatting, runs static analysis (`--fatal-infos`), and executes the complete unit test suite across both packages.
+* **[`.github/workflows/check_upstreams.yml`](.github/workflows/check_upstreams.yml)**: Runs on a scheduled weekly cron (every Monday at 08:00 UTC) and on manual dispatch. Uses `dart run melos run check:upstreams` to verify if Whatnot has published an updated OpenAPI spec or category taxonomy, failing the step with an automated alert if upstream changes are detected.
 
 ---
 

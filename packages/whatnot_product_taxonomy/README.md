@@ -12,7 +12,7 @@ Directly compiled from Whatnot's official [Whatnot-Inc/product-taxonomy](https:/
 * **440+ Attribute Definitions**: Data types (`STRING`, `INTEGER`, `FLOAT`, `BOOLEAN`), allowed values, min/max bounds, and category associations.
 * **Category Search & Tree Navigation**: Find root categories, subcategories, or search categories by keyword.
 * **Attribute Validation Engine**: Validate product attributes before making API calls to prevent `422 Unprocessable Entity` errors.
-* **Automated Sync Tooling**: Track upstream releases with `puro dart run tool/update_taxonomy.dart --check`.
+* **Automated Sync Tooling**: Track upstream releases with `dart run tool/update_taxonomy.dart --check`.
 
 ---
 

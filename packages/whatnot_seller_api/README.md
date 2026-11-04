@@ -113,13 +113,13 @@ Whatnot occasionally adds new endpoints or updates existing schemas. You can che
 
 ```bash
 # Check if Whatnot published a new OpenAPI version (exits with code 1 if an update is found)
-puro dart run tool/update_spec.dart --check
+dart run tool/update_spec.dart --check
 
 # Download the latest spec and regenerate SDK code
-puro dart run tool/update_spec.dart --update
+dart run tool/update_spec.dart --update
 
 # Or run the code generator directly
-puro dart run tool/generate.dart
+dart run tool/generate.dart
 ```
 
 ---
