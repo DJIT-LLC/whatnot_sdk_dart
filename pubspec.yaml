@@ -1,0 +1,62 @@
+name: whatnot_sdk_dart
+description: Monorepo workspace for Whatnot SDKs (Seller API & Product Taxonomy).
+repository: https://github.com/DJIT-LLC/whatnot_sdk_dart
+publish_to: none
+
+environment:
+  sdk: '^3.13.0'
+
+workspace:
+  - packages/whatnot_seller_api
+  - packages/whatnot_product_taxonomy
+
+dev_dependencies:
+  lints: ^5.0.0
+  melos: ^8.10.0
+
+melos:
+  command:
+    version:
+      linkToCommits: true
+      workspaceChangelog: false
+
+  scripts:
+    analyze:
+      run: puro dart analyze --fatal-infos
+      description: Run static analysis across all workspace packages.
+
+    test:
+      run: puro dart test packages/whatnot_seller_api packages/whatnot_product_taxonomy
+      description: Run unit tests across all workspace packages.
+
+    format:
+      run: puro dart format --output=none --set-exit-if-changed .
+      description: Check formatting across all workspace packages.
+
+    format:fix:
+      run: puro dart format .
+      description: Format all Dart files across the workspace.
+
+    check:spec:
+      run: puro dart run packages/whatnot_seller_api/tool/update_spec.dart --check
+      description: Check if Whatnot OpenAPI specification has upstream updates.
+
+    check:taxonomy:
+      run: puro dart run packages/whatnot_product_taxonomy/tool/update_taxonomy.dart --check
+      description: Check if Whatnot Product Taxonomy has upstream updates.
+
+    check:upstreams:
+      run: puro dart run packages/whatnot_seller_api/tool/update_spec.dart --check && puro dart run packages/whatnot_product_taxonomy/tool/update_taxonomy.dart --check
+      description: Check both Whatnot OpenAPI spec and product taxonomy for upstream changes.
+
+    update:spec:
+      run: puro dart run packages/whatnot_seller_api/tool/update_spec.dart --update
+      description: Check and update the OpenAPI spec and regenerate whatnot_seller_api SDK code.
+
+    update:taxonomy:
+      run: puro dart run packages/whatnot_product_taxonomy/tool/update_taxonomy.dart --update
+      description: Check and update taxonomy.json and regenerate whatnot_product_taxonomy data.
+
+    update:all:
+      run: puro dart run packages/whatnot_seller_api/tool/update_spec.dart --update && puro dart run packages/whatnot_product_taxonomy/tool/update_taxonomy.dart --update
+      description: Check and update all upstream Whatnot specifications.

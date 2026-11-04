@@ -1,0 +1,5 @@
+# Exclude maintainer tooling, raw taxonomy dataset, and test suites from published tarball
+tool/
+data/
+test/
+

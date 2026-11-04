@@ -1,0 +1,24 @@
+# Dart / Flutter generated tools and caches
+.dart_tool/
+.packages
+
+# Build artifacts
+build/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Melos
+.melos_tool/
+
+# IDE / Editor
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+

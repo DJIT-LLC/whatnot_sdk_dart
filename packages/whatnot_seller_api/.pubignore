@@ -1,0 +1,5 @@
+# Exclude maintainer tooling, upstream schemas, and test suites from published tarball
+tool/
+schemes/
+test/
+

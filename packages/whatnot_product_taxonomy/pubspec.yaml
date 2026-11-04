@@ -1,0 +1,21 @@
+name: whatnot_product_taxonomy
+description: A Dart SDK for Whatnot's official marketplace product categories, hierarchy tree, and category-specific item attributes.
+version: 1.2.0
+repository: https://github.com/DJIT-LLC/whatnot_sdk_dart
+issue_tracker: https://github.com/DJIT-LLC/whatnot_sdk_dart/issues
+
+resolution: workspace
+
+environment:
+  sdk: '^3.13.0'
+
+dependencies:
+  meta: ^1.15.0
+
+dev_dependencies:
+  analyzer_buffer: ^0.3.0
+  crypto: ^3.0.3
+  http: ^1.2.0
+  lints: ^5.0.0
+  test: ^1.25.0
+
